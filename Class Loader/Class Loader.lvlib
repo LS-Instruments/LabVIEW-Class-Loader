@@ -8,8 +8,10 @@
 		<Item Name="API" Type="Folder">
 			<Item Name="Load Msg.lvclass" Type="LVClass" URL="../Class Loader Messages/Load Msg/Load Msg.lvclass"/>
 		</Item>
-		<Item Name="Load Core Parallel Msg.lvclass" Type="LVClass" URL="../Class Loader Messages/Load Core Parallel Msg/Load Core Parallel Msg.lvclass"/>
-		<Item Name="Load Core Sequential Msg.lvclass" Type="LVClass" URL="../Class Loader Messages/Load Core Sequential Msg/Load Core Sequential Msg.lvclass"/>
+		<Item Name="Internal" Type="Folder">
+			<Item Name="Load Core Parallel Msg.lvclass" Type="LVClass" URL="../Class Loader Messages/Load Core Parallel Msg/Load Core Parallel Msg.lvclass"/>
+			<Item Name="Load Core Sequential Msg.lvclass" Type="LVClass" URL="../Class Loader Messages/Load Core Sequential Msg/Load Core Sequential Msg.lvclass"/>
+		</Item>
 	</Item>
 	<Item Name="Class Loader.lvclass" Type="LVClass" URL="../Class Loader/Class Loader.lvclass"/>
 </Library>
