@@ -1,4 +1,4 @@
-# Class Loader
+# LabVIEW Class Loader
 
 A LabVIEW Actor Framework library that asynchronously loads LabVIEW classes into memory from file paths, with optional parallel loading and progress/result callbacks to the caller.
 
