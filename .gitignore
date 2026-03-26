@@ -1,3 +1,4 @@
 *.incrb
 *.lvlibp
 Builds/
+*.aliases
