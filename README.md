@@ -19,51 +19,7 @@ Loading LabVIEW classes at run time is inherently slow, because each `.lvclass` 
 
 ---
 
-## Repository Structure
 
-```
-Class Loader/
-├── Class Loader/                        # Main Actor
-│   ├── Class Loader.lvclass
-│   ├── Load.vi                          # Entry point VI
-│   ├── Load Core Sequential.vi          # Sequential loading implementation
-│   ├── Load Core Parallel.vi            # Parallel loading implementation
-│   ├── Load Classes From Relative Paths File.vi
-│   ├── Generate Classes Relative Paths File.vi
-│   ├── Get Class FQN.vi
-│   ├── Write FQN (T).vi
-│   ├── Class Details.ctl
-│   ├── Classes Map.ctl
-│   ├── Load Inputs.ctl
-│   ├── Loading Method.ctl
-│   └── Loading Progress.ctl
-│
-├── Class Loader Interfaces/             # Caller-side interface Actor
-│   ├── Class Loader Interfaces.lvclass
-│   ├── Class Loading Progress.vi        # Override to handle progress callbacks
-│   ├── Class Loading Result.vi          # Override to handle result callback
-│   └── Class Loader Interfaces Messages/
-│       ├── Class Loading Progress Msg/
-│       └── Class Loading Result Msg/
-│
-├── Class Loader Messages/               # Messages sent to Class Loader
-│   ├── Load Msg/                        # Public API: trigger loading
-│   ├── Load Core Parallel Msg/          # Internal
-│   └── Load Core Sequential Msg/        # Internal
-│
-├── Class Loader.lvlib                   # Library entry point
-│
-├── Concrete Classes/                    # Example classes for testing (Class 1–10)
-│   ├── Generate Concrete Relative Paths File.vi
-│   └── Concrete Classes.lvlib
-│
-└── Test Caller Actor/                   # Integration test / demo
-    ├── Launcher.vi
-    ├── Test Caller Actor/
-    └── Abstract Class/
-```
-
----
 
 ## Architecture
 
@@ -109,6 +65,9 @@ The caller Actor must inherit from (or hold a reference to) **Class Loader Inter
 Use `Generate Classes Relative Paths File.vi` to write a text file listing the relative paths of classes to load (relative to a given root). At run time, pass the file path to `Load Classes From Relative Paths File.vi` to read the list back before sending the `Load Msg`. The `Concrete Classes` library includes `Generate Concrete Relative Paths File.vi` as a concrete example.
 
 ---
+# Project Building
+
+Use the <a href="https://github.com/jovianarts/LVSolutionBuilder" target="_blank">LabVIEW Solution Builder</a> to build the project (Please note that the release version has currently several bugs, please checkout <a href="https://github.com/AndreaV-Lsi/LVSolutionBuilder" target="_blank">this fork</a> to obtain a version where such bugs are corrected). This will generate the required project libraries and two executables in the Build sub-folder. Use "**Generate Concrete Class Paths.exe**" to generate the XML file that holds the relative paths of the concrete classes with respect to the parent abstract class. Once this is done you can execute the example "**Test Class Loader.exe**" to test the runtime loading of the concrete classes.
 
 ## Dependencies
 
