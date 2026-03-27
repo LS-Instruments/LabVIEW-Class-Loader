@@ -15,6 +15,7 @@
 		<Item Name="Internal" Type="Folder">
 			<Item Name="Load Core Parallel Msg.lvclass" Type="LVClass" URL="../Class Loader Messages/Load Core Parallel Msg/Load Core Parallel Msg.lvclass"/>
 			<Item Name="Load Core Sequential Msg.lvclass" Type="LVClass" URL="../Class Loader Messages/Load Core Sequential Msg/Load Core Sequential Msg.lvclass"/>
+			<Item Name="Update Cache Msg.lvclass" Type="LVClass" URL="../Class Loader Messages/Update Cache Msg/Update Cache Msg.lvclass"/>
 		</Item>
 	</Item>
 	<Item Name="Class Loader Interfaces.lvclass" Type="LVClass" URL="../Class Loader Interfaces/Class Loader Interfaces.lvclass"/>
